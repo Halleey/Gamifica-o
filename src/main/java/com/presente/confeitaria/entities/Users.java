@@ -1,9 +1,6 @@
 package com.presente.confeitaria.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Users {
@@ -17,6 +14,22 @@ public class Users {
     private String email;
     private String telephone;
 
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "role", nullable = false, length = 25)
+    private Role role = Role.ROLE_EMPLOYEE;
+
+    public enum Role {
+        ROLE_EMPLOYEE, ROLE_MANAGER
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
 
     public Long getId() {
         return id;

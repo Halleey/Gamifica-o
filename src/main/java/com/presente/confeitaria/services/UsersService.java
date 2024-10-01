@@ -3,6 +3,7 @@ package com.presente.confeitaria.services;
 import com.presente.confeitaria.dtos.UserRequestDTO;
 import com.presente.confeitaria.entities.Users;
 import com.presente.confeitaria.repositories.UserRepository;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -25,5 +26,10 @@ public class UsersService {
         users.setPassword(cripted);
         users.setTelephone(requestDTO.getTelephone());
         repository.save(users);
+    }
+
+    public Users searchByName(String username) {
+        return repository.findByName(username)
+                .orElseThrow(() -> new EntityNotFoundException(String.format("Usuário não encontrado para o nome: " + username)));
     }
 }
