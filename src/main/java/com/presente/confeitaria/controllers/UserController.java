@@ -1,6 +1,6 @@
 package com.presente.confeitaria.controllers;
 
-import com.presente.confeitaria.dtos.UserRequestDTO;
+import com.presente.confeitaria.dtos.user.UserRequestDTO;
 import com.presente.confeitaria.services.UsersService;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,5 +22,7 @@ public class UserController {
             service.saveUser(requestDTO);
         }
     }
+
+
 }
 

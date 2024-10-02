@@ -1,4 +1,4 @@
-package com.presente.confeitaria.dtos;
+package com.presente.confeitaria.dtos.task;
 
 public class TaskRequestDTO {
     private String name;

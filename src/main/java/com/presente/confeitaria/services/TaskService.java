@@ -1,7 +1,7 @@
 package com.presente.confeitaria.services;
 
 
-import com.presente.confeitaria.dtos.TaskRequestDTO;
+import com.presente.confeitaria.dtos.task.TaskRequestDTO;
 import com.presente.confeitaria.entities.Task;
 import com.presente.confeitaria.repositories.TaskRepository;
 import org.springframework.stereotype.Service;

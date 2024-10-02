@@ -1,6 +1,6 @@
 package com.presente.confeitaria.controllers;
 
-import com.presente.confeitaria.dtos.TaskRequestDTO;
+import com.presente.confeitaria.dtos.task.TaskRequestDTO;
 import com.presente.confeitaria.services.TaskService;
 import org.springframework.web.bind.annotation.*;
 

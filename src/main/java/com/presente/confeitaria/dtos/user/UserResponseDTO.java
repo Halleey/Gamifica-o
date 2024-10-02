@@ -1,9 +1,7 @@
-package com.presente.confeitaria.dtos;
+package com.presente.confeitaria.dtos.user;
 
-public class UserRequestDTO {
-
+public class UserResponseDTO {
     private String name;
-    private String password;
     private String email;
     private String telephone;
 
@@ -13,14 +11,6 @@ public class UserRequestDTO {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public String getEmail() {

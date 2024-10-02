@@ -1,6 +1,6 @@
 package com.presente.confeitaria.services;
 
-import com.presente.confeitaria.dtos.UserRequestDTO;
+import com.presente.confeitaria.dtos.user.UserRequestDTO;
 import com.presente.confeitaria.entities.Users;
 import com.presente.confeitaria.repositories.UserRepository;
 import jakarta.persistence.EntityNotFoundException;
