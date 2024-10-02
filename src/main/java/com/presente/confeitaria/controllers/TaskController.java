@@ -1,8 +1,11 @@
 package com.presente.confeitaria.controllers;
 
 import com.presente.confeitaria.dtos.task.TaskRequestDTO;
+import com.presente.confeitaria.dtos.task.TaskResponseDTO;
 import com.presente.confeitaria.services.TaskService;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RequestMapping("/task")
 @RestController
@@ -23,4 +26,16 @@ public class TaskController {
         }
           service.saveTask(requestDTO);
     }
+
+
+    @DeleteMapping("/{taskId}")
+    public void  removeTask(@PathVariable long taskId) {
+        service.removeTask(taskId);
+    }
+
+    @GetMapping()
+    public List<TaskResponseDTO> getAllTask(){
+       return service.getAllTask();
+    }
+
 }

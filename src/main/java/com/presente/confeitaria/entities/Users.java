@@ -3,7 +3,7 @@ package com.presente.confeitaria.entities;
 import jakarta.persistence.*;
 
 @Entity
-public class Users {
+public class Users  {
 
 
     @Id
@@ -18,7 +18,6 @@ public class Users {
     @Enumerated(EnumType.STRING)
     @Column(name = "role", nullable = false, length = 25)
     private Role role = Role.ROLE_EMPLOYEE;
-
 
     public enum Role {
         ROLE_EMPLOYEE, ROLE_MANAGER, ROLE_CREATOR
