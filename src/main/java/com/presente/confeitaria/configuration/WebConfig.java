@@ -26,6 +26,7 @@ public class WebConfig {
                 authorizeHttpRequests(authorize ->
                         authorize.
                                 requestMatchers(HttpMethod.POST, "/register" ).permitAll()
+                                .requestMatchers(HttpMethod.POST, "/task").hasAuthority(" ROLE_CREATOR")
                                 .anyRequest().authenticated())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .formLogin(AbstractHttpConfigurer::disable)

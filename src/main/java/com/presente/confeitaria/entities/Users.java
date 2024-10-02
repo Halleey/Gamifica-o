@@ -20,7 +20,7 @@ public class Users {
     private Role role = Role.ROLE_EMPLOYEE;
 
     public enum Role {
-        ROLE_EMPLOYEE, ROLE_MANAGER
+        ROLE_EMPLOYEE, ROLE_MANAGER, ROLE_CREATOR,
     }
 
     public Role getRole() {
