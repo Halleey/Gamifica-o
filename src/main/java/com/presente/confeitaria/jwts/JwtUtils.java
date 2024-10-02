@@ -47,7 +47,7 @@ public class JwtUtils {
         return new JwtToken(token);
     }
     @Deprecated
-    private static Claims getClaimsFromToken(String token) {
+    public static Claims getClaimsFromToken(String token) {
         try {
             return Jwts.parser()
                     .setSigningKey(generateKey()).build()

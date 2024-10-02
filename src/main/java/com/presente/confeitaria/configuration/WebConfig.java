@@ -19,25 +19,22 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 public class WebConfig {
 
     @Bean
-    SecurityFilterChain securityFilterChain(HttpSecurity  security) throws Exception {
+    SecurityFilterChain securityFilterChain(HttpSecurity security) throws Exception {
         security
-                .csrf(AbstractHttpConfigurer::disable).
-                cors().and().
-                authorizeHttpRequests(authorize ->
-                        authorize.
-                                requestMatchers(HttpMethod.POST, "/register" ).permitAll()
-                                .requestMatchers(HttpMethod.POST, "/enter/**").permitAll()
-                                .requestMatchers(HttpMethod.POST, "/task").hasAuthority("ROLE_CREATOR")
-
-                                .anyRequest().authenticated())
+                .csrf(AbstractHttpConfigurer::disable)
+                .cors().and()
+                .authorizeHttpRequests(authorize -> authorize
+                        .requestMatchers(HttpMethod.POST, "/register").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/enter/**").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/task/**").hasAuthority("ROLE_CREATOR")
+                        .anyRequest().authenticated())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .formLogin(AbstractHttpConfigurer::disable)
-                .addFilterBefore(jwtAuthorizationFilter(),
-                        UsernamePasswordAuthenticationFilter.class);
+                .addFilterBefore(jwtAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class);
 
         return security.build();
-
     }
+
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
 

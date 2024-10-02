@@ -42,7 +42,6 @@ public class JwtUserDetailsService implements UserDetailsService {
 
         Users.Role role = user.getRole(); // Obtém a função do usuário
         Long userId = user.getId(); // Obtém o ID do usuário
-        String email = user.getEmail(); // Obtém o email do usuário
 
         return JwtUtils.createToken(username, userId, role.name().substring("ROLE_".length()));
     }
