@@ -3,6 +3,7 @@ package com.presente.confeitaria.jwts;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
 
 import java.nio.charset.StandardCharsets;
@@ -40,6 +41,7 @@ public class JwtUtils {
 
         String token = Jwts.builder().setHeaderParam("typ", "JWT")
                 .setSubject(username).claim("userId",userId).setIssuedAt(issueAt).setExpiration(expireDate)
+                .signWith(generateKey(), SignatureAlgorithm.HS256)
                 .claim("role", role).compact();
 
         return new JwtToken(token);

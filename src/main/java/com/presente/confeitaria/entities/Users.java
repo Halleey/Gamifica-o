@@ -19,8 +19,9 @@ public class Users {
     @Column(name = "role", nullable = false, length = 25)
     private Role role = Role.ROLE_EMPLOYEE;
 
+
     public enum Role {
-        ROLE_EMPLOYEE, ROLE_MANAGER, ROLE_CREATOR,
+        ROLE_EMPLOYEE, ROLE_MANAGER, ROLE_CREATOR
     }
 
     public Role getRole() {

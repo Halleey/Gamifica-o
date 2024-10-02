@@ -18,7 +18,9 @@ public class TaskController {
 
     @PostMapping
     public void RegisterTask(@RequestBody TaskRequestDTO requestDTO) {
-
-         service.saveTask(requestDTO);
+        if(requestDTO.getName().isEmpty() || requestDTO.getDescription().isEmpty() || requestDTO.getDifficulty().isEmpty()) {
+            throw new RuntimeException("more informations is missing ");
+        }
+          service.saveTask(requestDTO);
     }
 }
