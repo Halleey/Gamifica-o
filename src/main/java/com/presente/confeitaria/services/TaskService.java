@@ -11,7 +11,6 @@ import java.util.stream.Collectors;
 @Service
 public class TaskService {
 
-
     private final TaskRepository repository;
 
     public TaskService(TaskRepository repository) {
@@ -19,7 +18,6 @@ public class TaskService {
     }
 
     public void saveTask(TaskRequestDTO requestDTO) {
-
         Task task = new Task();
         task.setName(requestDTO.getName());
         task.setDescription(requestDTO.getDescription());

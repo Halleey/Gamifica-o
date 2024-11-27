@@ -62,6 +62,12 @@ public class JwtUtils {
         return getClaimsFromToken(token).getSubject();
     }
 
+    public static Long getUserIdFromToken(String token) {
+        Claims claims = getClaimsFromToken(token);
+        return claims.get("userId", Long.class); // Certifique-se de incluir o userId no payload do token JWT
+    }
+
+
     public static boolean isTokenValid(String token) {
         try {
             Jwts.parser()

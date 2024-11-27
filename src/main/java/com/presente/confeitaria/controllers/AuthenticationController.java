@@ -5,7 +5,6 @@ import com.presente.confeitaria.dtos.user.LoginDTO;
 import com.presente.confeitaria.jwts.JwtToken;
 import com.presente.confeitaria.jwts.JwtUserDetailsService;
 import jakarta.servlet.http.HttpServletRequest;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -15,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/enter")
-@CrossOrigin("http://localhost:5173")
+@CrossOrigin("http://localhost:3000")
 public class AuthenticationController {
 
     private final JwtUserDetailsService detailsService;

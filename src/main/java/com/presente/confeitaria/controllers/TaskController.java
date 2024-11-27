@@ -26,7 +26,10 @@ public class TaskController {
         }
           service.saveTask(requestDTO);
     }
+    @PatchMapping
+    public void alterTask() {
 
+    }
 
     @DeleteMapping("/{taskId}")
     public void  removeTask(@PathVariable long taskId) {
